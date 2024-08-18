@@ -2,6 +2,7 @@ package Financial.example.User_management.Services;
 
 import Financial.example.User_management.Entities.User;
 import Financial.example.User_management.Repos.UserRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,8 @@ public class AuthService {
         User obj=repo.findByEmail(user.getEmail()).orElseThrow();
         String token= jwtService.generateToken(user);
         return token;
+    }
+    public User saveUser(User user){
+
     }
 }
