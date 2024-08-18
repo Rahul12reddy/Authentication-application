@@ -24,16 +24,19 @@ public class User implements UserDetails {
     @Column(name="Email")
     String email;
 
+    @Column(name="Password")
+    String Password;
     public User() {
     }
 
-    public User(int userid, String first_name, String last_name, Date dob, String gender, String email) {
+    public User(int userid, String first_name, String last_name, Date dob, String gender, String email, String Password) {
         this.userid = userid;
         this.first_name = first_name;
         this.last_name = last_name;
         this.dob = dob;
         this.gender = gender;
         this.email = email;
+        this.Password = Password;
     }
 
     public int getUserid() {
@@ -82,6 +85,10 @@ public class User implements UserDetails {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
     }
 
     @Override
